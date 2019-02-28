@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500");
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 
 * {
   margin: 0;
@@ -13,17 +14,10 @@ body {
   background: #fff!important;
   overflow-x: hidden;
 }
-/* svg */
-.cls-1 {
-  fill: url(#linear-gradient);
-  
-
+.logo{
+  width: 100px;
+  height: auto;
 }
-
-.cls-2 {
-  fill: url(#linear-gradient-2);
-}
-
 .active{
   font-weight: 500;
   border-bottom: 1px solid #fff;
@@ -31,7 +25,7 @@ body {
 }
 
 #hero .hero-image{
-  background: url('../img/bg-2.jpeg') center center no-repeat fixed;
+  background: url('../img/front.jpg') center center no-repeat fixed;
   background-color: rgba(160, 156, 156, 0.3);
   background-blend-mode: multiply;
   background-attachment: fixed;
@@ -42,14 +36,33 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size:100% 100vh;
-
+  overflow: hidden;
+  animation: anim 3s linear;
+}
+@keyframes anim {
+  0%{
+    top: 0;
+    background-color: #333;
+    opacity: 0;
+  }
+  25%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 .navbar-brand{
-  color: rgb(225, 243, 250);
-  font-size: 1.5rem;
+  color: #f1cf5c!important;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
   margin-left: 30px;
   font-weight: 500;
+  letter-spacing: 2px;
 }
 .navbar-toggler-icon{
   color: #fff;
@@ -57,12 +70,18 @@ body {
 
 a.nav-link{
   text-align: right;
+  font-family: 'Great Vibes', cursive;
   color: rgb(244, 246, 247);
   font-size: 1.2rem;
   line-height: 1.5;
   padding: 5px;
   margin: 5px 10px;
-  letter-spacing: 5px;
+  letter-spacing: 8px;
+}
+a.nav-link:hover{
+  font-weight: 700;
+  font-size: 1.4rem;
+  transition:  1s ease-in-out;
 }
 /* #navbarSupportedContent{
   background: rgb(116, 116, 116);
@@ -72,16 +91,19 @@ a.nav-link{
 
 .tagline{
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 35%;
   text-align: center;
+
 }
 .tagline h2{
-  margin-top: 10%;
-    font-size: 2rem;
-    color: rgb(227, 232, 233);
-    animation: all 2s ease-in-out;
-    animation-delay: 0.5s;
+    margin-top: 10%;
+    font-size: 4rem;
+    color: rgb(245, 243, 237);
+    transition: 0.5s linear;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 2px;
+   
 }
 
 
@@ -119,7 +141,7 @@ p.tag{
 }
 
 .pic{
-  background: url(../img/sunset.jpeg) center center no-repeat;
+  background: url(../img/outside.jpg) center center no-repeat;
   background-size: cover;
   background-color: rgba(124, 129, 129, 0.9);
   background-blend-mode: multiply;
@@ -152,6 +174,7 @@ p.tag{
   width: 150px!important;
   display: block;
   margin-left: 40%;
+  transition: all 1s ease-in-out;
 }
 .cta:hover{
   color: rgb(247, 241, 241);
@@ -279,14 +302,14 @@ main{
   margin-top: 5%;
   align-content: center;
 }
-.room-feat ul{
+/* .room-feat ul{
   margin-left: 30px;
   padding: 10px;
 }
 .room-feat ul li{
   list-style: circle;
   padding: 5px;
-}
+} */
 .room-desc p{
   margin: 1% auto 10px auto;
   line-height: 2.4;
@@ -400,9 +423,66 @@ body {
   animation: bounce 2s infinite;
 }
 
+/* accordion */
+.accordion{
+  position: relative;
+  display: block;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  
+}
+.room-description{
+  margin-top: 20%;
+}
+.room-inclusion{
+  margin-top: 5%;
+}
+.accordion-item{
+  display: block;
+}
+.accordion .accordion-content{
+  display: block;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease, padding 0.5s linear;
+}
+.accordion .accordion-content p,.accordion .accordion-content ul li{
+  padding: 0;
+  margin: 0;
+}
+.accordion .accordion-content:target{
+  height: 250px;
+  transition: 0.5s ease-in-out;
+}
+.accordion .accordion-trigger{
+  text-decoration: none;
+}
+.accordion .accordion-title{
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 10px;
+  font-size: 1em;
+  background: #00b3b4;
+  color: #fff;
+  border: solid 1px #379aa4;
+
+
+}
+.accordion-content ul li{
+  list-style: circle;
+  padding: 5px;
+}
 
 
 
+
+.footer{
+  background: url("../img/front.jpg") center bottom no-repeat;
+  background-size: cover;
+  
+}
 
 
 
@@ -414,8 +494,20 @@ body {
 /* Smartphones (portrait and landscape) ----------- */
 
 @media screen and (max-width: 500px) {
+.navbar{
+  font-weight: 700;
+}
+  .navbar-brand{
+    margin-left: -20px;
+    font-size: 1.5rem;
+
+  }
   .tagline{
     margin-left: -25%;
+  }
+  .tagline h2{
+    padding-top: 20px;
+    font-size: 2.5rem;
   }
   p.tag{
     font-size: 1rem;
@@ -439,6 +531,7 @@ body {
   #contact.container{
     padding: 5px;
   }
+  
   .footer p{
     font-size: 9px;
     text-align: center;
@@ -470,5 +563,12 @@ body {
   .accom .my-4{
     padding: -20px;
   }
+
+  .accordion .accordion-content:target{
+    height: 350px;
+    transition: 0.5s ease-in-out;
+    overflow: scroll;
+  }
+
   
 }
