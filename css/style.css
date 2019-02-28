@@ -297,7 +297,7 @@ main{
   margin-top: 20px;
   height: 100%;
    */
-  width: 80%;
+  width: 95%;
   margin-left: 20px;
   margin-top: 5%;
   align-content: center;
@@ -467,12 +467,30 @@ body {
   background: #00b3b4;
   color: #fff;
   border: solid 1px #379aa4;
-
-
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset , 0 -1px 0 rgba(255,255,255,0.2) inset ,
+   0 4px 2px rgba(0,0,0,0.5);
+  text-align: center;
 }
-.accordion-content ul li{
-  list-style: circle;
+.accordion-content ul{
+  margin-left: 15px;
+  list-style-type: circle;
   padding: 5px;
+  line-height: 1.8;
+}
+.accordion .accordion-title:hover{
+  background-color: #0bbfc0;
+ 
+}
+.accordion .accordion-title::after{
+  position: absolute;
+  content: "";
+  top: calc(50% - 5px);
+  right: 20px;
+  width: 7px;
+  height: 7px;
+  border-left: #fff solid 2px;
+  border-bottom: #fff solid 2px;
+  transform: rotate(-45deg); 
 }
 
 
@@ -481,7 +499,7 @@ body {
 .footer{
   background: url("../img/front.jpg") center bottom no-repeat;
   background-size: cover;
-  
+  margin-top: 30px;
 }
 
 
